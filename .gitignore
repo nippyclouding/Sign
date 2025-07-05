@@ -1,0 +1,82 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+log/
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IDE files
+.idea/              # IntelliJ IDEA 설정 파일
+.vscode/            # VS Code 설정 파일
+*.iml               # IntelliJ IDEA 모듈 파일
+*.ipr               # IntelliJ IDEA 프로젝트 파일
+*.iws               # IntelliJ IDEA 워크스페이스 파일
+target/             # Maven 빌드 결과물 폴더
+build/              # Gradle 빌드 결과물 폴더
+.gradle/            # Gradle 관련 파일
+.project            # Eclipse 프로젝트 파일
+.settings/          # Eclipse 설정 파일
+.classpath          # Eclipse 클래스패스 파일
+.factorypath
+
+# OS generated files
+.DS_Store           # macOS에서 생성되는 파일
+Thumbs.db           # Windows에서 생성되는 파일
+
+# Maven/Gradle cache
+.m2/
+.gradle/
+
+# Spring Boot specific
+/target/
+/build/
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.log
+*.log.*
+/logs/
+/tmp/
+.idea/
+.metadata/
+.classpath
+.project
+.settings/
+bin/
+out/
+*.iml
+*.ipr
+*.iws
+/.apt_generated/
+/.apt_generated_tests/
+
+# Environment variables and sensitive data (if not managed by other means)
+.env
+*.env
+# If you have sensitive info in application.properties/yml, consider adding them.
+# But generally, these files are part of the project.
+# If they contain sensitive info, use environment variables or external configs.
+# src/main/resources/application*.properties
+# src/main/resources/application*.yml
+
+# Test results
+/test-results/
+/surefire-reports/
+
+# Others
+*.bak
+*.swp
+*~
+.DS_Store
