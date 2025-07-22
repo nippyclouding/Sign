@@ -7,12 +7,14 @@ import Project.Ex.member.memberDomain.MemberSignUpDto;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+@Slf4j
 @RequestMapping("/")
 @RequiredArgsConstructor
 @Controller
@@ -38,6 +40,8 @@ public class MemberController {
         if (bindingResult.hasErrors()) {
             return "sign/signUp";
         }
+
+        log.info("new member signUp : {member}", memberDTO.getUsername());
 
         Member savedMember = memberService.getMemberRepository().save(memberDTO.toEntity());
         redirectAttributes.addFlashAttribute("member", savedMember);
@@ -70,14 +74,13 @@ public class MemberController {
             return "sign/signInSuccess";
         }
         else
+
+            log.info("signIn member : {member}", member.toEntity().getUsername());
+
             return "sign/signInFail";
     }
 
-    //포스팅 메인 페이지 매핑
-    @GetMapping("/posting")
-    public String postingMain(){
-        return "posting/postingMain";
-    }
+
 
     //로그아웃 매핑
     @GetMapping("/signOut")
@@ -135,6 +138,8 @@ public class MemberController {
             httpSession.invalidate();
 
             // 성공 메시지 추가
+            log.info("deleteMember = {member}", memberDeleteDto.toEntity().getUsername());
+
             redirectAttributes.addFlashAttribute("message", "회원 탈퇴가 완료되었습니다.");
             return "sign/deleteSuccess";
 
@@ -147,5 +152,12 @@ public class MemberController {
     @GetMapping("/deleteSuccess")
     public String deleteSuccess() {
         return "sign/deleteSuccess";
+    }
+
+    //메인 페이지 매핑
+    //첫 페이지 수정 필요 시 해당 메서드 수정
+    @GetMapping("main")
+    public String postingMain(){
+        return "firstMain";
     }
 }

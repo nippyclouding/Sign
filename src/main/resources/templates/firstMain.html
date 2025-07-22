@@ -42,14 +42,45 @@
             font-size: 0.9em; /* ✨ 글자 크기 조절 */
             /* btn-outline-secondary, btn-sm 등은 Bootstrap 클래스이므로 여기에 다시 정의할 필요 없습니다. */
         }
+
+        /* ✨ 추가된 CSS 시작 ✨ */
+        table {
+            width: 80%; /* ✨ 테이블 너비 설정 (화면의 80%) */
+            margin: 20px auto; /* ✨ 상하 20px 마진, 좌우 auto로 테이블 중앙 정렬 */
+            border-collapse: collapse; /* ✨ 셀 경계선이 겹치지 않도록 병합 */
+            background-color: #ffffff; /* ✨ 테이블 배경색 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* ✨ 부드러운 그림자 효과 */
+        }
+
+        table th, table td {
+            border: 1px solid #dee2e6; /* ✨ 셀 경계선 스타일 */
+            padding: 12px 20px; /* ✨ 셀 내부 여백: 상하 12px, 좌우 20px (좌우 여백을 늘려 띄우기) */
+            text-align: center; /* ✨ 셀 안의 텍스트 중앙 정렬 */
+        }
+
+        table thead th {
+            background-color: #e9ecef; /* ✨ 헤더 배경색 */
+            color: #495057; /* ✨ 헤더 글자색 */
+            font-weight: bold; /* ✨ 헤더 글자 굵게 */
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f2f2f2; /* ✨ 짝수 행 배경색 (줄무늬 효과) */
+        }
+
+        table tbody tr:hover {
+            background-color: #e2e6ea; /* ✨ 마우스 오버 시 행 배경색 변경 */
+        }
+        /* ✨ 추가된 CSS 끝 ✨ */
     </style>
 </head>
 <body>
 <div class="main-content">
-    hello
+    <h3>MAIN PAGE</h3>
 </div>
 
-<!-- ✨ 두 버튼을 하나의 div로 묶고 top-right-buttons 클래스를 적용 -->
+
+
 <div class="top-right-buttons">
     <a th:href="@{/signOut}" class="btn btn-outline-secondary btn-sm">로그아웃</a>
     <a th:href="@{/deleteAccount}" class="btn btn-outline-secondary btn-sm">회원탈퇴</a>

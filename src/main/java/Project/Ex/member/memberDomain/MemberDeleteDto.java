@@ -13,4 +13,7 @@ public class MemberDeleteDto {
     public boolean isPasswordValid(String storedPassword) {
         return this.password != null && this.password.equals(storedPassword);
     }
+    public Member toEntity() {
+        return new Member(null, password, null);
+    }
 }

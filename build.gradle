@@ -1,16 +1,21 @@
 plugins {
-	id 'java'
+	id 'java-library'
 	id 'org.springframework.boot' version '3.5.3'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'maven-publish'
+	id 'signing'
 }
 
-group = 'Project'
-version = '0.0.1-SNAPSHOT'
+group = 'io.github.nippyclouding'  // GitHub 사용자명으로 변경
+version = '1.0.0'
+description = '회원가입 인터페이스 라이브러리'
 
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
+	withSourcesJar()
+	withJavadocJar()
 }
 
 configurations {
@@ -41,3 +46,4 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+

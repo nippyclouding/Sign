@@ -80,3 +80,10 @@ out/
 *.swp
 *~
 .DS_Store
+
+# 라이브러리 배포 관련
+gradle.properties.local
+publish.log
+
+# GitHub Packages 인증 정보 (로컬에서만 사용)
+gpr.properties
